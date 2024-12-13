@@ -4,6 +4,7 @@ import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.Query
+import androidx.room.Update
 import com.example.pam_meet10.data.entity.Mahasiswa
 import kotlinx.coroutines.flow.Flow
 
@@ -27,4 +28,7 @@ interface MahasiswaDao {
 
     @Delete // untuk menghapus data mahasiswa
     suspend fun deteleMahasiswa(mahasiswa: Mahasiswa) // suspend menunjukkan metode harus dijalankan dalam korutin. diselesaikan.
+
+    @Update // untuk memperbarui informasi mahasiswa yang sudah ada di database.
+    suspend fun updateMahasiswa(mahasiswa: Mahasiswa)
 }
