@@ -1,6 +1,7 @@
 package com.example.pam_meet10.data.dao
 
 import androidx.room.Dao
+import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.Query
 import com.example.pam_meet10.data.entity.Mahasiswa
@@ -23,4 +24,7 @@ interface MahasiswaDao {
     // query select * from mahasiswa where nim -> mendapatkan detail 1 mahasiswa, karena berdasarkan nim [ menggunakan flow; hanya 1 data]
     @Query("SELECT * FROM mahasiswa WHERE nim = :nim")
     fun getMahasiswa(nim: String) : Flow<Mahasiswa>
+
+    @Delete // untuk menghapus data mahasiswa
+    suspend fun deteleMahasiswa(mahasiswa: Mahasiswa) // suspend menunjukkan metode harus dijalankan dalam korutin. diselesaikan.
 }
