@@ -1,11 +1,60 @@
 package com.example.pam_meet10.ui.viewmodel
 
+import androidx.lifecycle.SavedStateHandle
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.example.pam_meet10.data.entity.Mahasiswa
+import com.example.pam_meet10.repository.RepositoryMhs
+import com.example.pam_meet10.ui.navigation.DestinasiDetail
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.flow.SharingStarted
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.WhileSubscribed
+import kotlinx.coroutines.flow.internal.NopCollector.emit
+import kotlinx.coroutines.launch
 
 class DetailMhsViewModel (
+    savedStateHandle: SavedStateHandle,
+    private val repositoryMhs: RepositoryMhs,
+) : ViewModel() {
+    private val _nim: String = checkNotNull(savedStateHandle[DestinasiDetail.NIM])
 
-){
+    val detailUiState: StateFlow<DetailUiState> = repositoryMhs.getMhs(_nim)
+        .filterNotNull()
+        .map {
+            DetailUiState(
+                detailUiEvent = it.toDetailUiEvent(),
+                isLoading = false
+            )
+        }
+        .onStart {
+            emit(DetailUiState(isLoading = true))
+            delay(600)
+        }
+        .catch {
+            emit(
+                DetailUiState(
+                    isLoading = false,
+                    isError = true,
+                    errorMessage = it.message ?: "Terjadi Kesalahan",
+                )
+            )
+        }
+        .stateIn(
+            scope = viewModelScope,
+            started = SharingStarted.WhileSubscribed(2000),
+            initialValue = DetailUiState (
+                isLoading = true,
+            ),
+        )
 
+    fun deteleMhs() {
+        detailUiState.value.detailUiEvent.toMahasiswaEntity().let {
+            viewModelScope.launch {
+                repositoryMhs.deleteMhs(it)
+            }
+        }
+    }
 }
 
 data class DetailUiState(
