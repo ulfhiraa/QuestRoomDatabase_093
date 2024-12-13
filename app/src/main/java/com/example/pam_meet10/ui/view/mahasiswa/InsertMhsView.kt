@@ -38,6 +38,22 @@ object DestinasiInsert : AlamatNavigasi{
     override val route: String = "insert_mhs"
 }
 
+object DestinasiHome : AlamatNavigasi {
+    override val route = "home"
+} // untuk berpindah ke halaman home
+
+object DestinasiDetail : AlamatNavigasi {
+    override val route = "detail"
+    const val NIM = "nim"
+    val routesWithArg = "$route/{$NIM}"
+} // untuk berpindah ke halaman detail
+
+object DestinasiUpdate : AlamatNavigasi {
+    override val route = "update"
+    const val NIM = "nim"
+    val routesWithArg = "$route/{$NIM}"
+} // destinasi mengubah data
+
 @Composable
 fun InsertMhsView(
     onBack: () -> Unit,

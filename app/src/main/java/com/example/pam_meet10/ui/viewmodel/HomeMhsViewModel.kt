@@ -9,10 +9,10 @@ import kotlinx.coroutines.flow.StateFlow
 class HomeMhsViewModel (
     private val repositoryMhs: RepositoryMhs
 ) : ViewModel(){
-
+    val homeUiState: StateFlow<HomeUiState> = repositoryMhs.getAllMhs()
 }
 
-data class HomeUiState(
+data class HomeUiState( // state; mengubah tampilan
     val listMhs: List<Mahasiswa> = listOf(),
     val isLoading: Boolean = false,
     val Error: Boolean = false,
