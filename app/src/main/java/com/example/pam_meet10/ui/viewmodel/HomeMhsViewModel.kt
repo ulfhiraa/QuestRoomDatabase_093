@@ -10,6 +10,12 @@ class HomeMhsViewModel (
     private val repositoryMhs: RepositoryMhs
 ) : ViewModel(){
     val homeUiState: StateFlow<HomeUiState> = repositoryMhs.getAllMhs()
+        .filterNotNull()
+        .map {
+            HomeUiState(
+
+            )
+        }
 }
 
 data class HomeUiState( // state; mengubah tampilan
