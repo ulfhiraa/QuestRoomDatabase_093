@@ -21,5 +21,6 @@ interface MahasiswaDao {
     //flow untuk mendapatkan data dalam jetpack compose
 
     // query select * from mahasiswa where nim -> mendapatkan detail 1 mahasiswa, karena berdasarkan nim [ menggunakan flow; hanya 1 data]
-
+    @Query("SELECT * FROM mahasiswa WHERE nim = :nim")
+    fun getMahasiswa(nim: String) : Flow<Mahasiswa>
 }
