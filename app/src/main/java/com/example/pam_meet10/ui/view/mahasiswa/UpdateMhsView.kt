@@ -4,7 +4,6 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Snackbar
 import androidx.compose.material3.SnackbarDuration
 import androidx.compose.material3.SnackbarHost
 import androidx.compose.material3.SnackbarHostState
@@ -16,7 +15,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.pam_meet10.ui.costumwidget.TopAppBar
-import com.example.pam_meet10.ui.navigation.AlamatNavigasi
 import com.example.pam_meet10.ui.viewmodel.PenyediaViewModel
 import com.example.pam_meet10.ui.viewmodel.UpdateMhsViewModel
 import kotlinx.coroutines.Dispatchers
@@ -56,9 +54,10 @@ fun UpdateMhsView( // untuk memperbarui informasi mahasiswa
         snackbarHost = { SnackbarHost(hostState = snackbarHostState) }, // Tempatkan snackbar di scaffold
         topBar = {
             TopAppBar(
-                judul = "Edit Mahasiswa",
-                showBackButton = true,
                 onBack = onBack,
+                showBackButton = true,
+                judul = "Edit Mahasiswa",
+                modifier = modifier,
              //   modifier = modifier
             )
         }
