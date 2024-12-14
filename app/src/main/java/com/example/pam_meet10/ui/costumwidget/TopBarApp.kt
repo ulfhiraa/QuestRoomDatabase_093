@@ -38,7 +38,7 @@ fun TopAppBar(
                 ) {
                     Text("Kembali")
                 }
-                Spacer(modifier = Modifier.weight(2f))
+                Spacer(modifier = Modifier.weight(1f))
             }
         }
 

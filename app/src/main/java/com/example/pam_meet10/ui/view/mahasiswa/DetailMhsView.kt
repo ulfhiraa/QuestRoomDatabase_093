@@ -229,7 +229,7 @@ private fun DeleteConfirmationDialog( // konfirmasi penghapusan data
             }
         },
         confirmButton = {
-            TextButton(onClick = onDeleteCancel) {
+            TextButton(onClick = onDeleteConfirm) {
                 Text(text = "Yes")
             }
         }

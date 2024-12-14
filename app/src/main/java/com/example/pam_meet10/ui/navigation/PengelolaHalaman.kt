@@ -22,7 +22,7 @@ fun PengelolaHalaman(
 ) {
     NavHost (
         navController = navController,
-        startDestination = DestinasiInsert.route) {
+        startDestination = DestinasiHome.route) {
 
         composable(
             route = DestinasiHome.route

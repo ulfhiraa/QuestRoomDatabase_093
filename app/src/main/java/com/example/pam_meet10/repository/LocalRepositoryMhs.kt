@@ -5,8 +5,8 @@ import com.example.pam_meet10.data.entity.Mahasiswa
 import kotlinx.coroutines.flow.Flow
 
 class LocalRepositoryMhs (
-    private val mahasiswaDao: MahasiswaDao
-) : RepositoryMhs { // implementasi dari RepositoryMhs
+    private val mahasiswaDao: MahasiswaDao) : RepositoryMhs { // implementasi dari RepositoryMhs
+
     override suspend fun insertMhs(mahasiswa: Mahasiswa) {
         mahasiswaDao.insertMahasiswa(mahasiswa)
     }
