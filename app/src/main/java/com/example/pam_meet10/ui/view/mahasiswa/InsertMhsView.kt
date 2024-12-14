@@ -37,7 +37,6 @@ import kotlinx.coroutines.launch
 object DestinasiInsert : AlamatNavigasi{
     override val route: String = "insert_mhs"
 }
-
 @Composable
 fun InsertMhsView(
     onBack: () -> Unit,
@@ -66,10 +65,9 @@ fun InsertMhsView(
         Column (
             modifier = Modifier
                 .fillMaxSize()
-                .padding(padding)
+                //.padding(padding)
                 .padding(16.dp)
         ){
-
             TopAppBar(
                 onBack = onBack,
                 showBackButton = true,
