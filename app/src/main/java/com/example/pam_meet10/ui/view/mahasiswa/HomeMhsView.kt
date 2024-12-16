@@ -55,7 +55,7 @@ fun HomeMhsView( // untuk tampilan halaman utama daftar mahasiswa
                 judul = "Daftar Mahasiswa",
                 showBackButton = false,
                 onBack = { },
-                modifier = modifier
+                modifier = Modifier
             )
         },
         floatingActionButton = { // tombol aksi untuk add mhs
