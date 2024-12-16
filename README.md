@@ -1,7 +1,5 @@
-Home Page
-![a  Home](https://github.com/user-attachments/assets/2de3ca53-af09-4efc-8379-24725d58d07f)
-Table Mahasiswa sebelum data ditambahkan
-![dataHome](https://github.com/user-attachments/assets/6c56d063-b9a9-43e5-8f74-90ab1ca794b5)
+Home Page ![a  Home](https://github.com/user-attachments/assets/2de3ca53-af09-4efc-8379-24725d58d07f)
+Table Mahasiswa sebelum data ditambahkan ![dataHome](https://github.com/user-attachments/assets/6c56d063-b9a9-43e5-8f74-90ab1ca794b5)
 
 Insert Data Page
 ![c  tambahData](https://github.com/user-attachments/assets/55feda64-6ff4-4c25-8392-571008b003ed)
