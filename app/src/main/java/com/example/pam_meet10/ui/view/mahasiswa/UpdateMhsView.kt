@@ -58,7 +58,6 @@ fun UpdateMhsView( // untuk memperbarui informasi mahasiswa
                 showBackButton = true,
                 judul = "Edit Mahasiswa",
                 modifier = modifier,
-             //   modifier = modifier
             )
         }
     ){ padding ->
